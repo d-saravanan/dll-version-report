@@ -13,7 +13,13 @@ namespace VersionChecker
     {
         static void Main(string[] args)
         {
-            string path = @"G:\Projects\InEight\SourceCode\InterStellar\Development\";
+            Console.WriteLine("Enter the path for the development folder. Example: " + @"G:\Projects\InEight\SourceCode\InterStellar\Development\");
+
+            string path = Console.ReadLine();
+
+            Console.WriteLine("Got the following path: " + path);
+            Console.WriteLine("Starting to process the solution");
+
             string[] projectFiles = Directory.GetFiles(path, "*.csproj", SearchOption.AllDirectories);
 
             SortedDictionary<string, List<string>> projectRefs = new SortedDictionary<string, List<string>>();
